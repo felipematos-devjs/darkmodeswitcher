@@ -1,4 +1,4 @@
-import { UseThemeContext } from "../providers/GlobalProvider"
+import { UseThemeContext } from "../providers/ThemeProvider"
 
 //cards containing the programming stacks
 export const StackCard = (props) =>{

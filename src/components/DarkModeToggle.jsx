@@ -1,4 +1,4 @@
-import { UseThemeContext } from "../providers/GlobalProvider"
+import { UseThemeContext } from "../providers/ThemeProvider"
 
 //dark mode toggle button!
 export const DarkModeToggle = () =>{

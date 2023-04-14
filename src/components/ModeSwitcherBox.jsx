@@ -1,14 +1,17 @@
-import { UseThemeContext } from "../providers/GlobalProvider"
+import { UseModalContext } from "../providers/ModalProvider"
+import { UseThemeContext } from "../providers/ThemeProvider"
 import { DarkModeToggle } from "./DarkModeToggle"
 
 //central box containing the darkmode toggle
 export const ModeSwitcherBox = () =>{
     
     const {theme} = UseThemeContext()
+    const {modalOpened} = UseModalContext()
+    const BGClassName = `BG BG-${theme} ${modalOpened?`blur`:``}`;
     
     const textClassName = 'text-'+ theme;
     const dividerClassName = 'divider divider-'+ theme;
-    const boxClassName = 'box box-'+ theme;
+    const boxClassName = `box box-${theme} ${modalOpened?`blur`:``}`;
 
     return(
     <div className={boxClassName}>

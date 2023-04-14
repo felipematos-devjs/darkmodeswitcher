@@ -1,10 +1,12 @@
-import { UseThemeContext } from "../providers/GlobalProvider"
+import { UseThemeContext } from "../providers/ThemeProvider"
 import { images } from "../assets/images";
+import { UseModalContext } from "../providers/ModalProvider";
 
 //the background from the SVG images
 export const BG = () =>{
     const {theme} = UseThemeContext()
-    const BGClassName = 'BG BG-'+ theme;
+    const {modalOpened} = UseModalContext()
+    const BGClassName = `BG BG-${theme} ${modalOpened?`blur`:``}`;
 
     const bg_style = (theme == 'dark')? 
     {backgroundImage: `url(${images.bg_dk})`}: 
