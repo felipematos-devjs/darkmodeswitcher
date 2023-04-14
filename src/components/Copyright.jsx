@@ -1,14 +1,12 @@
-import { UseThemeContext } from "../providers/GlobalProvider"
+import { UseThemeContext } from "../providers/ThemeProvider"
 
 //copyright. will go on the footer
-export const Copyright = () =>{
+export const Copyright = ({children}) =>{
     const {theme} = UseThemeContext(); 
     const cpTheme = 'copyright copyright-'+ theme;
     
     return(<article className={cpTheme}>
-                <h2>Made by</h2>
-                <h2>Felipe Matos</h2>
-                <p>(in his free time!)</p>
+                {children}
             </article>
   )
 }
